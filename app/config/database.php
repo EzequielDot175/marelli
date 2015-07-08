@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'devmarel_marelli',
-			'username'  => 'devmarel_marelli',
-			'password'  => '#Tv1#Poni-vD',
+			'database'  => 'marelli',
+			'username'  => 'root',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

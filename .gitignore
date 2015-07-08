@@ -1,0 +1,4 @@
+vendor/
+bootstrap/
+/app/config/*
+marelli.zip
