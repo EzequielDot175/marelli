@@ -1,1 +1,77 @@
-ECHO est  activado.
+
+<!--articulos agregados-->
+<div class="productos col-xs-12 col-sm-3 col-md-3 ol-lg-3">
+
+	<!--*** SUBMENU CATEGORIAS ***-->
+	<?php include 'submenu-categorias.php' ?>
+	<!--*** SUBMENU CATEGORIAS ***-->
+	
+	<!--Bloque-agregados-->
+	<div class='articulos-agregados'>
+
+		<!--titulo-->
+		<div class="titulo-agregados">
+			<img class='carrito-sidebar-icon' src="assets/images/carrito-icon.png">
+			<h3 class='text-uppercase carrito-sidebar-text'>ARTICULOS AGREGADOS</h3>
+		</div>
+		<!--//titulo-->
+
+		<!--Bloque-prodcotos-->
+		<div class="bloque-agregados">
+			<div class="items-productos">
+
+				<!--titulos-columnas-->
+				<ul class="titulos-columnas">
+					<li class="columna-productos columna-cantidad">
+						<h4>cantidad</h4>
+					</li>
+					<li class="columna-productos columna-fecha">
+						<h4>fecha</h4>
+					</li>
+					<li class="columna-productos columna-descripcion">
+						<h4>descripcion</h4>
+					</li>
+				</ul>
+				<!--titulos-columnas-->
+
+				<!--item-lista-->
+				<ul class="item-lista" ng-repeat="(a,b) in pedidos">
+					<li class="columna-productos columna-cantidad">
+						<span><p>{{b.cantidad}}</p></span>
+					</li>
+					<li class="columna-productos columna-fecha">
+						<span class="text-uppercase">
+							<div class="fecha">
+								<p>{{ b.created | date: 'dd/MM/yyyy'}}</p>
+								<p>{{b.created | date: 'HH.mm' }}</p>
+
+							</div>
+						</span>
+					</li>
+					<li class="columna-productos columna-descripcion">
+						<span class="text-uppercase">
+							<div class="descripcion">
+								<p class="text-uppercase descripcion-fondo-gris">CODIGO: {{b.producto_interno}}</p>
+								<p class="text-uppercase">{{b.catName}}</p>
+								<p class="text-uppercase">{{b.producto_descripcion}}</p>
+								<div class="cerrar-articulos-agregados cerrar-item" ng-click="del(a)"></div>
+							</div>
+						</span>
+					</li>
+				</ul>
+				<!--//item-lista-->
+
+				
+
+			</div>
+		</div>
+		<!--//Bloque-prodcotos-->
+
+		<button type="button" class="btn boton-confirmar" ng-click="confirmar();">CONFIRMAR PEDIDO</button>
+
+	</div>
+	<!--//Bloque-agregados-->
+
+
+</div>
+<!--//articulos agregados-->

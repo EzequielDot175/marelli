@@ -116,82 +116,43 @@
 					</div>
 
 					<!-- carrito sidebar -->
-					<div class="carrito-sidebar">
+					<div class="carrito-sidebar" ng-show="VisibilidadCarrito">
 						<div class="titulo-agregados">
 							<img class='carrito-sidebar-icon' src="assets/images/carrito-icon.png">
 							<h3 class='text-uppercase carrito-sidebar-text'>ARTICULOS AGREGADOS</h3>
 						</div>
+					
+						<div ng-repeat="(a,b) in pedidos">
+							<!-- item-categoria -->
+							<div class="subtitulo carrito-sidebar-subtitulo">
+								<h4 class='text-uppercase'>{{b.catName}}</h4>
+							</div>
+							<!-- //item-categoria -->
 
-						<!-- item-categoria -->
-						<div class="subtitulo carrito-sidebar-subtitulo">
-							<h4 class='text-uppercase'>bombas depresoras</h4>
+							<!-- item-carrito -->
+							<div class="item-carrito">
+								<div class="head-item-carrito">
+									<p class="codigo-item-carrito"class='text-uppercase '>{{b.producto_interno}}</p>
+									<div class="cerrar-item-carrito cerrar-item" ng-click="del(a)"></div>
+								</div>
+								<div class="body-item-carrito">
+									<div class="cantidad-elementos">
+										<p class='text-uppercase'>{{b.cantidad}}</p>
+									</div>
+
+									<div class="descripcion-elementos">
+										<p class='text-uppercase producto'>{{b.producto_interno}}</p>
+										<p class='text-uppercase id'>{{b.producto_id}}</p>
+									</div>
+								</div>
+							</div>
+							<!-- //item-carrito -->
 						</div>
-						<!-- //item-categoria -->
+						
 
-						<!-- item-carrito -->
-						<div class="item-carrito">
-							<div class="head-item-carrito">
-								<p class="codigo-item-carrito"class='text-uppercase '>5623339898</p>
-								<div class="cerrar-item-carrito cerrar-item"></div>
-							</div>
-							<div class="body-item-carrito">
-								<div class="cantidad-elementos">
-									<p class='text-uppercase'>3</p>
-								</div>
+						
 
-								<div class="descripcion-elementos">
-									<p class='text-uppercase producto'>bomba de agua</p>
-									<p class='text-uppercase id'>123102</p>
-								</div>
-							</div>
-						</div>
-						<!-- //item-carrito -->
-
-						<!-- item-categoria -->
-						<div class="subtitulo carrito-sidebar-subtitulo">
-							<h4 class='text-uppercase'>bombas depresoras</h4>
-						</div>
-						<!-- //item-categoria -->
-
-						<!-- item-carrito -->
-						<div class="item-carrito">
-							<div class="head-item-carrito">
-								<p class="codigo-item-carrito"class='text-uppercase '>5623339898</p>
-								<div class="cerrar-item-carrito cerrar-item"></div>
-							</div>
-							<div class="body-item-carrito">
-								<div class="cantidad-elementos">
-									<p class='text-uppercase'>3</p>
-								</div>
-
-								<div class="descripcion-elementos">
-									<p class='text-uppercase producto'>bomba de agua</p>
-									<p class='text-uppercase id'>123102</p>
-								</div>
-							</div>
-						</div>
-						<!-- //item-carrito -->
-
-						<!-- item-carrito -->
-						<div class="item-carrito">
-							<div class="head-item-carrito">
-								<p class="codigo-item-carrito"class='text-uppercase '>5623339898</p>
-								<div class="cerrar-item-carrito cerrar-item"></div>
-							</div>
-							<div class="body-item-carrito">
-								<div class="cantidad-elementos">
-									<p class='text-uppercase'>3</p>
-								</div>
-
-								<div class="descripcion-elementos">
-									<p class='text-uppercase producto'>bomba de agua / bomba de agua </p>
-									<p class='text-uppercase id'>123102</p>
-								</div>
-							</div>
-						</div>
-						<!-- //item-carrito -->
-
-						<a href="articulos-agregados.php">	
+						<a href="#/confirmar">	
 							<button type="button" class="btn boton-continuar">CONTINUAR</button>
 						</a>
 

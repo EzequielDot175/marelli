@@ -16,27 +16,37 @@ app.config(['$routeProvider', function($routeProvider) {
                 	templateUrl: 'templates/productos_categoria_list.html',
                 	controller: 'ProductosCategoriaCtrl'
                 })
+                .when('/confirmar/',{
+                	templateUrl: 'templates/pedido_confirmar.html',
+                	controller: 'PedidosCtrl'
+                })
                 .otherwise({
                 	redirectTo: '/productos'
                 });
 }]);
 
 
-app.service('PedidosService', [function () {
+app.service('PedidosService', ['localStorageService',function (storage) {
 	this.pedidos = [];
-	this.add = function(){
-		this.pedidos.push({element:"asdasd"});
+
+	if (storage.get('pedido')) {
+		this.pedidos = storage.get('pedido');
+	};
+
+	this.add = function(item){
+		this.pedidos.push(item);
 	}
 	this.get = function(){
 		return this.pedidos;
+		
 	}
 }]);
 
-app.controller('IndexCtrl', ['$scope', function ($scope) {
-	
+app.controller('IndexCtrl', ['$scope','$location', function ($scope,$location) {
+	$location.path('/productos');
 }]);
 
-app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routeParams', function ($scope,$http,$location,$routeParams) {
+app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routeParams','localStorageService','PedidosService', function ($scope,$http,$location,$routeParams,storage,cPedidos) {
 
 	$scope.list = [];
 	$scope.categoryName = "";
@@ -56,23 +66,24 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 		  error(function(error, status, headers, config) {
 		  	console.log(error);
 		  });
-
+	console.log(cPedidos);
 	$scope.add = function(a){
 		var item = a;
-		console.log(item);
-
+			item.catName = $scope.categoryName;
+			item.created = new Date();
+			// console.log(item);
+			cPedidos.add(item);
 	}
 
 }]);
 
+
+
 app.controller('ProductosCtrl', ['$scope','$http','localStorageService','$location','PedidosService', function ($scope,$http,storage,$location,pedidos) {
 
 	if (storage.get('categorias')) {
-			console.log('Cargado desde session');
 			$scope.categorias = storage.get('categorias');
 	}else{
-			console.log('Cargado desde post');
-
 		$http.post('ajax', {get:'categorias',func: 'all'}).
 		  success(function(data, status, headers, config) {
 			$scope.categorias = data;
@@ -83,14 +94,8 @@ app.controller('ProductosCtrl', ['$scope','$http','localStorageService','$locati
 		  });
 	}
 
-	// setInterval(function(){
-	// 	$scope.$apply(function(){
-	// 		pedidos.pedidos.push({"element": "asdasdas"});
-	// 	});
-	// }, 3000);
 
 	$scope.item = function(a){
-		console.log(a);
 		$location.path('/productos/categoria/'+a.id_marelli);
 		$scope.$apply();
 	}
@@ -99,15 +104,49 @@ app.controller('ProductosCtrl', ['$scope','$http','localStorageService','$locati
 }]);
 
 
-app.controller('PedidosCtrl', ['$scope','PedidosService', function($scope,pedidos) {
-	
-	
-	// $scope.$watch(function(){
-	// 	return pedidos.pedidos;
-	// },function(a,b){
-	// 	console.log(a);
-	// 	console.log(b);
-	// },true);
-	// console.log(pedidos.pedidos);	
+app.controller('PedidosCtrl', ['$scope','PedidosService','localStorageService','$location','$rootScope','$http', function($scope,pedidos,storage,$location,$rootScope,$http) {
+
+	$scope.pedidos = pedidos.get();
+
+	$rootScope.$on("$locationChangeStart", function(event, next, current) { 
+       if ($location.path() == "/confirmar/") {
+			$scope.VisibilidadCarrito = false;
+		}else{
+			$scope.VisibilidadCarrito = true;
+		}
+     });
+
+
+	$scope.$watch(function(){
+		return pedidos.pedidos;
+	},function(a,b){
+		storage.set('pedido',pedidos.get());
+		$scope.pedidos = pedidos.get();
+	},true);
+
+	$scope.del = function(index){
+		if (confirm("¿Esta seguro de realizar esta accion?")) {
+			$scope.pedidos.splice(index, 1);
+		};
+	}
+	$scope.confirmar = function(){
+		console.log();
+		if ($scope.pedidos.length > 0) {
+			$http.post("ajax",{get:'pedidos',func: 'confirm', list: $scope.pedidos}).success(function(data){
+				console.log(data);
+				if (data == "true") {
+					alert("Pedido guardado correctamente!");
+					pedidos.pedidos = [];
+					$location.path('/productos');
+				};
+			}).error(function(error) {
+				console.log(error);
+			});
+		}else{
+			alert("No se puede guardar la petición, esta vacia.");
+		}
+	}
+
+
 }]);
 

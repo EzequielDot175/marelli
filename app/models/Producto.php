@@ -8,7 +8,7 @@ class Producto extends Eloquent {
 		switch ($param) {
 			case 'byCategory':
 					$id = e(Input::get('id'));
-					$productos = Producto::where('categoria',"=",$id)->get()->toJson();
+					$productos = Producto::where('categoria',"=",$id)->take(20)->get()->toJson();
 					echo($productos);
 				break;
 			

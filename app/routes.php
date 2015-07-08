@@ -23,6 +23,9 @@ Route::post("/ajax", function(){
 			case 'productos':
 					Producto::Ajax(Input::get('func'));
 				break;
+			case 'pedidos':
+					Pedido::Ajax(Input::get('func'));
+				break;
 			
 			default:
 				# code...
