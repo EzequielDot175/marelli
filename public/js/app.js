@@ -71,9 +71,6 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 
 
 
-			// console.log(item);
-		// var c = item;
-		// delete item["$$hashKey"];
 		var newItem = {};
 			newItem.cantidad = a.cantidad;
 			newItem.catName = $scope.categoryName;
