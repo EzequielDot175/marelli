@@ -68,11 +68,27 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 		  });
 	console.log(cPedidos);
 	$scope.add = function(a){
+
+
 		var item = a;
 			item.catName = $scope.categoryName;
-			item.created = new Date();
+			item.catName = new Date();
+
 			// console.log(item);
-			cPedidos.add(item);
+		// var c = item;
+		// delete item["$$hashKey"];
+		var newItem = {};
+			newItem.cantidad = a.cantidad;
+			newItem.catName = a.catName;
+			newItem.categoria = a.categoria;
+			newItem.created = new Date();
+			newItem.producto_descripcion = a.producto_descripcion;
+			newItem.producto_id = a.producto_id;
+			newItem.producto_interno = a.producto_interno;
+
+		cPedidos.add(newItem);
+
+		// console.log();
 	}
 
 }]);
