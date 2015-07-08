@@ -1,0 +1,177 @@
+// ========================
+/******** PRODUCTOS *****/
+// ========================
+
+.bloque-historial{
+	height: auto;
+	float: left;
+	position: relative;
+	width: 100%;
+
+	.items-productos{
+		float: left;
+		background-color: #595959;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+
+		.columna-codigo{
+			width: 15%;
+			background-color: #5F656D;
+			height: 100%;
+		}
+
+		.busqueda{
+			
+		}
+		.columna-categoria{
+			width: 15%;
+		}
+		.columna-descripcion{
+			width: 15%;
+
+			li{
+				p{
+					text-align: left !important;
+				}
+			}
+			
+		}
+		.columna-lote{
+			width: 15%;
+		}
+		.columna-cantidad{
+			width: 10%;
+
+			input[type=number]::-webkit-inner-spin-button,
+			input[type=number]::-webkit-outer-spin-button {
+				//-webkit-appearance: none;
+				margin: 0; /* Removes leftover margin */
+				opacity: .5;
+				width: 5px;
+			}
+		}
+		.columna-agregar{
+			width: 10%;
+		}
+
+		.columna-id{
+			width: 10%;
+		}
+
+		.columna-fecha{
+			width: 10%;
+		}
+
+		.titulos-columnas{
+			height: 50px;
+			color: #fff;
+			text-transform: uppercase;
+			background-color: #717882;
+			font-family: 12px;
+
+			h4{
+				margin-top: 17px;
+				font-size: 12px;
+				text-align: center;
+			}
+		}
+
+		.columna-productos{
+			float: left;
+			font-family: Gotham-Book;
+			margin: 0;
+			padding: 0px;
+
+			p{
+				margin-top: 15px;
+				text-align: center;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-top: 0;
+			}
+
+			span{
+				background-color: #667891;
+				width: 100%;
+				float: left;
+				font-size: 12px;
+				margin: 1px 0;
+				padding: 0px;
+				color: #fff;
+				height: 60px;
+
+			}
+
+			.cantidad{
+				width: 60px;
+				border: none;
+				background-color: #536783;
+				height: 25px;
+				margin-top: 15px;
+				position: relative;
+				left: 50%;
+				margin-left: -30px;
+			}
+
+			.ok{
+				height: 29px;
+				width: 30px;
+				margin-top: 15px;
+				position: relative;
+				left: 50%;
+				margin-left: -15px;
+			}
+
+			.ok-activo{
+				background-image: url('../images/ok-activo.png');
+			}
+
+			.ok-inactivo{
+				background-image: url('../images/ok-inactivo.png');
+			}
+		}
+
+	}
+}
+
+
+// ==========================================================================
+/* RESPONSIVE  */
+// ==========================================================================
+
+/*mobile--------------------------------------------------*/
+@media screen and (min-width: 0px) and (max-width : 767px){
+
+
+
+}
+
+
+/*tablet----------------------------------------*/
+@media screen and (min-width: 768px) and (max-width : 1280px){
+
+
+}
+
+/**  TABLETS LANDSCAPE **/
+@media screen and (min-width: 771px) and (max-width : 900px){
+
+
+}
+
+/*notbook------------------------------------*/
+@media screen and (min-width: 1280px) and (max-width : 1800px){
+	
+}
+
+/*desktop------------------------------*/
+@media screen and (min-width: 1801px) and (max-width : 2200px){
+
+}
+
+/*desktop large-----------------------------------------------*/
+@media screen and (min-width: 2220px) and (max-width : 4000px){
+
+}

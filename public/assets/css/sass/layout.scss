@@ -1,0 +1,386 @@
+// ========================
+/******** LAYOUT ********/
+// ========================
+
+//CONTENIDO
+.contenedor{
+	float: left;
+	width: 80%;
+	margin: 0 10%;
+}
+
+.titulo{
+	margin-bottom: 50px;
+
+	h1{
+		font-size: 30px;
+		color: #fff;
+		margin: 5px;
+	}
+	h3{
+		font-size: 11px;
+		color: #fff;
+		margin: 5px;
+	}
+}
+
+.buscar{
+	width: 100%;
+	float: right;
+	position: relative;
+
+	.glyphicon{
+		position: absolute;
+		color: #fff;
+		right: 10px;
+		top: 7px;
+	}
+	
+	input {
+		width: 40%;
+		background-color: #444444;
+		border: none;
+		padding: 5px;
+		margin: 0;
+		border-radius: 2px;
+		color: #fff;
+		height: 30px;
+		float: right;
+		}
+}
+
+.menu{
+	background-color: #F2C300;
+	width: 100%;
+	height: 100px;
+	margin-bottom: 0;
+
+	.logo{
+		width: 100px;
+		float: left;
+		margin-top: 15px;
+	}
+
+	.navbar-collapse.collapse {
+		padding-right: 0;
+	}
+
+	.nav>li>a {
+		padding: 10px 0px 10px 40px;
+		font-family: Gotham-Medium;
+	}
+	.nav{
+		float: right;
+		margin-top: 20px;
+		color: #fff;
+
+		li{
+			a{
+				color: #fff;
+			}
+			a:focus{
+				text-decoration: none;
+				background-color: rgba(0, 0, 0, .0);
+			}
+			a:hover{
+				text-decoration: none;
+				background-color: rgba(0, 0, 0, .0);
+			}
+		}
+	}
+}
+
+.bloque-general{
+	width: 100%;
+	float: left;
+	position: relative;
+	margin-bottom: 40px;
+
+	.contenido{
+		width: 75%;
+		float: left;
+		float: right;
+		background-color: #717882;
+	}
+
+	.sidebar{
+		width: 25%;
+		float: right;
+		background-color: #969696;
+		min-height: 100%;
+		position: absolute;
+		margin-bottom: 20px;
+
+		.perfil{
+			width: 100%;
+			background-color: #ABABAB;
+			padding: 15px;
+			position: relative;
+
+			.imagen-perfil {
+				width: 100px;
+				height: 100px;
+				margin: 0px auto 20px auto;
+				display: block;
+				overflow: hidden;
+				border-radius: 100%;
+				position: relative;
+
+				img {
+					height: 100px;
+					display: block;
+					position: absolute;
+				}
+			}
+
+			p {
+				color: #fff;
+			}
+			.nombre-perfil{
+				font-family: Gotham-Book;
+			}
+
+			.boton-perfil{
+				border-radius: 0;
+				margin: 15px auto 0 auto;
+				display: block;
+				width: 170px;
+				left: 50%;
+				color: #fff;
+				position: relative;
+				margin-left: -85px;
+				background-color: #F2C300;
+				-webkit-box-shadow: inset 0px -15px 0px 0px rgba(224,181,0,1);
+				-moz-box-shadow: inset 0px -15px 0px 0px rgba(224,181,0,1);
+				box-shadow: inset 0px -15px 0px 0px rgba(224,181,0,1);
+				font-size: 12px;
+				font-family: Gotham-Medium;
+			}
+
+			.btn:hover {
+				color: #fff;
+				text-decoration: none;
+			}
+
+		}
+
+		.carrito-sidebar{
+			font-family: Gotham-Book;
+			float: left;
+			width: 100%;
+			padding: 10px;
+
+			.carrito-sidebar-subtitulo{
+				margin: 15px 0px 0px 0px;
+				float: left;
+				width: 100%;
+				background-color: #8B8E91;
+
+				h4{
+					text-align: center;
+					color: #B8BDC8;
+					font-size: 12px;
+					width: 100%;
+					padding: 5px;
+				}
+			}
+
+			.titulo-agregados{
+				color:#fff;
+				margin: 10px 0;
+				float: left;
+
+				.carrito-sidebar-text{
+					float: left;
+					color:#fff;
+					font-size: 12px;
+					padding-top: 10px;
+					padding-left: 10px;
+				}
+
+				.carrito-sidebar-icon{
+					float: left;
+				}
+			}
+
+			.item-carrito{
+				width: 100%;
+				color:#5D81B5;
+				background-color: #BBBBBB;
+				float: left;
+				margin-bottom: 1px;
+
+				.head-item-carrito{
+					width: 100%;
+					float: left;
+					background-color: #C3C3C3;
+					padding: 5px 0;
+
+					.codigo-item-carrito{
+						float: left;
+						margin-left: 25%;
+						margin-top: 5px;
+					}
+
+					.cerrar-item-carrito{
+						float: right;
+						background-image: url('../images/cerrar-blanco.png');
+						height: 23px;
+						width: 23px;
+						cursor: pointer;
+						margin: 0 5px;
+					}
+
+					.cerrar-hover{
+						background-image: url('../images/cerrar-celeste.png') !important;
+					}
+
+				}
+
+				.body-item-carrito{
+					float: left;
+					width: 100%;
+
+					.cantidad-elementos{
+						width: 25%;
+						float: left;
+						font-size: 30px;
+						text-align: center;
+						margin-top: 10px;
+
+					}
+					.descripcion-elementos{
+						width: 75%;
+						float: left;
+
+						.producto{
+							font-size: 12px;
+							font-weight: bold;
+							padding-top: 5px;
+						}
+
+						.id{
+							font-size: 10px;
+							padding: 3px 0;
+						}
+					}
+				}
+			}
+
+			.boton-continuar{
+				border-radius: 0;
+				margin: 15px auto 0 auto;
+				display: block;
+				color: #fff;
+				float: left;
+				width: 170px;
+				left: 50%;
+				position: relative;
+				margin-left: -85px;
+				background-color: #F2C300;
+				-webkit-box-shadow: inset 0px -15px 0px 0px rgba(224,181,0,1);
+				-moz-box-shadow: inset 0px -15px 0px 0px rgba(224,181,0,1);
+				box-shadow: inset 0px -15px 0px 0px rgba(224,181,0,1);
+				font-size: 12px;
+				font-family: Gotham-Medium;
+			}
+
+		}
+
+	}
+
+	.sub-menu{
+		height: 65px;
+		background-color: #717882;
+
+		.sub-menu-text{
+			color: #fff;
+			font-size: 12px;
+			float: left;
+			margin: 30px 10px 0 20px;
+		}
+
+		.sub-menu-icon{
+			width: 50px;
+			float: left;
+			margin-top: 12px;
+
+			img{
+				width: 100%;
+			}
+		}
+
+		.sub-menu-flecha{
+			width: 30px;
+			float: right;
+			margin-top: 30px;
+			margin-right: 20px;
+			cursor: pointer;
+
+			img{
+				width: 100%;
+			}
+		}
+
+	}
+
+}
+
+
+// ==========================================================================
+/* RESPONSIVE  */
+// ==========================================================================
+
+/*mobile--------------------------------------------------*/
+@media screen and (min-width: 0px) and (max-width : 767px){
+
+
+}
+
+
+/*tablet----------------------------------------*/
+@media screen and (min-width: 768px) and (max-width : 1280px){
+	.contenedor{
+		width: 90%;
+		margin: 0 5%;
+	}
+}
+
+/**  TABLETS LANDSCAPE **/
+@media screen and (min-width: 771px) and (max-width : 900px){
+
+
+	.bloque-general .sidebar {
+	  width: 100%;
+	}
+
+	.bloque-general .contenido {
+	  width: 100%;
+	}
+
+	.menu .logo {
+	  position: absolute;
+	  top: 10px;
+	}
+
+	.bloque-general .sidebar {
+	  position: relative;
+	}
+
+
+}
+
+/*notbook------------------------------------*/
+@media screen and (min-width: 1280px) and (max-width : 1800px){
+	
+}
+
+/*desktop------------------------------*/
+@media screen and (min-width: 1801px) and (max-width : 2200px){
+
+}
+
+/*desktop large-----------------------------------------------*/
+@media screen and (min-width: 2220px) and (max-width : 4000px){
+
+}

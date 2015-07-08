@@ -1,0 +1,76 @@
+// ========================
+/******** CATEGORIAS *****/
+// ========================
+
+.login{
+	width: 300px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	margin-left: -150px;
+	margin-top: 150px;
+	background-color: #999;
+	padding: 20px;
+	font-family: Gotham-Book;
+
+	button{
+		font-family: Gotham-Book;
+	}
+		
+
+}
+
+.logo-login{
+	margin-bottom: 20px;
+
+	img{
+		width: 100px;
+		position: relative;
+		left: 50%;
+		margin-left: -50px;
+	}
+		
+
+}
+
+
+
+
+// ==========================================================================
+/* RESPONSIVE  */
+// ==========================================================================
+
+/*mobile--------------------------------------------------*/
+@media screen and (min-width: 0px) and (max-width : 767px){
+
+
+
+}
+
+
+/*tablet----------------------------------------*/
+@media screen and (min-width: 768px) and (max-width : 1280px){
+
+
+}
+
+/**  TABLETS LANDSCAPE **/
+@media screen and (min-width: 771px) and (max-width : 900px){
+
+
+}
+
+/*notbook------------------------------------*/
+@media screen and (min-width: 1280px) and (max-width : 1800px){
+	
+}
+
+/*desktop------------------------------*/
+@media screen and (min-width: 1801px) and (max-width : 2200px){
+
+}
+
+/*desktop large-----------------------------------------------*/
+@media screen and (min-width: 2220px) and (max-width : 4000px){
+
+}

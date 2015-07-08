@@ -1,0 +1,264 @@
+// ========================
+/******** PRODUCTOS *****/
+// ========================
+
+.productos{
+	float: left;
+	width: 100%;
+	position: relative;
+	height: auto;
+
+	::-webkit-input-placeholder {
+		color: rgba(255,255,255,.5);
+		text-align: left;
+		font-size: 11px;
+		padding-top: 2px;
+	}
+
+	:-webkit-placeholder { /* Firefox 18- */
+		color: rgba(255,255,255,.5);
+		text-align: left;
+		font-size: 11px;
+		padding-top: 2px;
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+		color: rgba(255,255,255,.5);
+		text-align: left;
+		font-size: 11px;
+		padding-top: 2px;
+	}
+
+	:-ms-input-placeholder {
+		color: rgba(255,255,255,.5);
+		text-align: left;
+		font-size: 11px;
+		padding-top: 2px;
+	}
+
+	.titulo-prod{
+		h2{
+			color: #fff;
+			font-size: 24px;
+			margin-top: 10px;
+			width: 100%;
+			float: left;
+			background-image: url('../images/fondo-titulo.png');
+			padding: 30px;
+			text-align: center;
+		}
+	}
+
+	.botones-descargar{
+
+		button{
+			width: 50%;
+			float: left;
+			border-radius: 0;
+			color: #fff;
+			background-color: #A1ADC6;
+			border: 1px solid #666;
+			height: 40px;
+			padding: 0;
+			box-shadow: inset 0px -147px 4px -130px rgba(150,161,184,1);
+			-webkit-box-shadow: inset 0px -147px 4px -130px rgba(150,161,184,1);
+			-moz-box-shadow: inset 0px -147px 4px -130px rgba(150,161,184,1);
+			font-size: 11px;
+			font-family: Gotham-Book;
+
+			img{
+				width: 40px;
+			}
+		}
+	}
+	
+	.buscar-codigo{
+			width: 100%;
+			background-color: transparent;
+			margin-top: 10px;
+			position: relative;
+		
+
+		.buscar-codigo-input{
+			width: 80%;
+			background-color: transparent;
+			border: none;
+			margin-left: 20%;
+			padding-left: 10px;
+			font-size: 12px;
+			margin-top: 5px;
+		}
+
+		.buscar-codigo-glyphicon {
+		  position: absolute;
+		  color: #fff;
+		  left: 8px;
+		  top: 7px;
+		}
+	}
+	.bloque-productos{
+		height: auto;
+		float: left;
+		position: relative;
+		width: 100%;
+
+		.items-productos{
+			float: left;
+			background-color: #595959;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+
+			.columna-codigo{
+				width: 15%;
+				background-color: #5F656D;
+				height: 100%;
+			}
+
+			.busqueda{
+				
+			}
+			.columna-categoria{
+				width: 25%;
+			}
+			.columna-descripcion{
+				width: 25%;
+
+				li{
+					p{
+						text-align: left !important;
+					}
+				}
+				
+			}
+			.columna-lote{
+				width: 15%;
+			}
+			.columna-cantidad{
+				width: 10%;
+
+				input[type=number]::-webkit-inner-spin-button,
+				input[type=number]::-webkit-outer-spin-button {
+					//-webkit-appearance: none;
+					margin: 0; /* Removes leftover margin */
+					opacity: .5;
+					width: 5px;
+				}
+			}
+			.columna-agregar{
+				width: 10%;
+			}
+
+			.titulos-columnas{
+				height: 50px;
+				color: #fff;
+				text-transform: uppercase;
+				background-color: #717882;
+				font-family: 12px;
+
+				h4{
+					margin-top: 17px;
+					font-size: 12px;
+					text-align: center;
+				}
+			}
+
+			.columna-productos{
+				float: left;
+				font-family: Gotham-Book;
+				margin: 0;
+				padding: 0px;
+
+				p{
+					margin-top: 15px;
+					text-align: center;
+					position: relative;
+					top: 50%;
+					transform: translateY(-50%);
+					margin-top: 0;
+				}
+
+				span{
+					background-color: #667891;
+					width: 100%;
+					float: left;
+					font-size: 12px;
+					margin: 1px 0;
+					padding: 0px;
+					color: #fff;
+					height: 60px;
+
+				}
+
+				.cantidad{
+					width: 60px;
+					border: none;
+					background-color: #536783;
+					height: 25px;
+					margin-top: 15px;
+					position: relative;
+					left: 50%;
+					margin-left: -30px;
+				}
+
+				.ok{
+					height: 29px;
+					width: 30px;
+					margin-top: 15px;
+					position: relative;
+					left: 50%;
+					margin-left: -15px;
+				}
+
+				.ok-activo{
+					background-image: url('../images/ok-activo.png');
+				}
+
+				.ok-inactivo{
+					background-image: url('../images/ok-inactivo.png');
+				}
+			}
+
+		}
+	}
+}
+
+
+// ==========================================================================
+/* RESPONSIVE  */
+// ==========================================================================
+
+/*mobile--------------------------------------------------*/
+@media screen and (min-width: 0px) and (max-width : 767px){
+
+
+
+}
+
+
+/*tablet----------------------------------------*/
+@media screen and (min-width: 768px) and (max-width : 1280px){
+
+
+}
+
+/**  TABLETS LANDSCAPE **/
+@media screen and (min-width: 771px) and (max-width : 900px){
+
+
+}
+
+/*notbook------------------------------------*/
+@media screen and (min-width: 1280px) and (max-width : 1800px){
+	
+}
+
+/*desktop------------------------------*/
+@media screen and (min-width: 1801px) and (max-width : 2200px){
+
+}
+
+/*desktop large-----------------------------------------------*/
+@media screen and (min-width: 2220px) and (max-width : 4000px){
+
+}

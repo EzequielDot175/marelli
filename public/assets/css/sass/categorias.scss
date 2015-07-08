@@ -1,0 +1,192 @@
+// ========================
+/******** CATEGORIAS *****/
+// ========================
+
+.categorias{
+	float: left;
+	width: 100%;
+	padding: 20px;
+	position: relative;
+	height: auto;
+
+	.sub-menu-flecha {
+		width: 30px;
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+	
+	.titulo-cat{
+		h2{
+			color: #fff;
+			font-size: 16px;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+	}
+
+	.flecha{
+		width: 50px;
+		display: block;
+		margin: 0 auto;
+		padding-top: 20px;
+		cursor: pointer;
+
+		img{
+			width: 100%;
+			padding: 5px;
+		}
+
+	}
+
+	.bloque-categoria{
+		height: auto;
+		float: left;
+		position: relative;
+		margin-bottom: 20px;
+
+		.categoria{
+			float: left;
+			width: 10%;
+			background-color: #666E79;
+			padding: 10px 0px;
+			height: 98.5%;
+			position: absolute;
+
+			p {
+				color: #fff;
+				font-size: 50px;
+				border-bottom: 1px solid #fff;
+				width: 40px;
+				margin: 0 auto;
+			}
+			input{
+				color: #fff;
+				font-size: 50px;
+				width: 40px;
+				margin: 0 auto;
+				background-color: transparent;
+				border: none;
+				border-bottom: 1px solid #fff;
+				display: block;
+			}
+		}
+
+		.items{
+			float: right;
+			width: 90%;
+			margin-right: -1%;
+			//display: none;
+
+			.item{
+				background-color: #5F656E;
+				height: auto;
+				padding: 10px;
+				width: 32.3%;
+				margin-right: 1%;
+				margin-bottom: 1%;
+				font-family: Gotham-Book;
+				cursor: pointer;
+				
+				img{
+					width: 23%;
+					float: left;
+				}
+
+				.info-categorias{
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					margin-top: 0;
+					left: 25%;
+				}
+
+				p{
+					width: 75%;
+					float: left;
+					font-size: 12px;
+					margin: 0px;
+					padding: 0px;
+					padding-left: 10px;
+					color: #C9C9C9;
+					
+
+				}
+			}
+			.activo{
+				background-color: #535860;
+				-webkit-box-shadow: inset 0px -5px 0px 0px rgba(242,195,0,1);
+				-moz-box-shadow: inset 0px -5px 0px 0px rgba(242,195,0,1);
+				box-shadow: inset 0px -5px 0px 0px rgba(242,195,0,1);
+			}
+
+		}
+
+	}
+
+	
+
+}
+
+
+// ==========================================================================
+/* RESPONSIVE  */
+// ==========================================================================
+
+/*mobile--------------------------------------------------*/
+@media screen and (min-width: 0px) and (max-width : 767px){
+
+	.categorias .items .item {
+	  width: 100%;
+	  margin-right: 0%;
+	}
+
+	.categorias .categoria {
+	  width: 100%;
+	}
+
+	.categorias .items {
+	  width: 100%;
+	}
+
+}
+
+
+/*tablet----------------------------------------*/
+@media screen and (min-width: 768px) and (max-width : 1280px){
+	.categoria{
+		width: 11% !important;
+		margin-right: 1%;
+	}
+
+	.items{
+		width: 88% !important;
+	}
+
+	.categorias .items p {
+		font-size: 10px;
+	}
+
+}
+
+/**  TABLETS LANDSCAPE **/
+@media screen and (min-width: 771px) and (max-width : 900px){
+
+
+}
+
+/*notbook------------------------------------*/
+@media screen and (min-width: 1280px) and (max-width : 1800px){
+	
+}
+
+/*desktop------------------------------*/
+@media screen and (min-width: 1801px) and (max-width : 2200px){
+
+}
+
+/*desktop large-----------------------------------------------*/
+@media screen and (min-width: 2220px) and (max-width : 4000px){
+
+}

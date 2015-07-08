@@ -1,0 +1,26 @@
+{
+  "name": "larangular",
+  "version": "0.0.0",
+  "description": "dependencias para larangular",
+  "componentsDirectory": "public/",
+  "main": "bower",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "angular",
+    "node",
+    "laravel"
+  ],
+  "authors": [
+    "Ezequiel Romero"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
