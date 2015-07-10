@@ -195,7 +195,6 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 
 		});
 	}
-	$scope.searchByCode;
 
 
 }]);

@@ -3,7 +3,71 @@
 <div class="productos col-xs-12 col-sm-3 col-md-3 ol-lg-3">
 
 	<!-- include submenu categorias -->
-	<ng-include src="'templates/submenu-categorias.html'"></ng-include>
+	
+
+	<!--submenu-->
+	<div class='sub-menu'>
+		<h5 class="text-uppercase sub-menu-text">cambiar de categoría</h5>
+		<img class="sub-menu-icon"src="assets/images/magneti-marelli-item-1.png">
+		<img class="sub-menu-icon"src="assets/images/magneti-marelli-item-2.png">
+		<img class="sub-menu-icon"src="assets/images/magneti-marelli-item-1.png">
+		<img class="sub-menu-icon" src="assets/images/magneti-marelli-item-2.png">
+		<img id="mostrar-categorias" class="sub-menu-flecha" src="assets/images/flecha-galerry-bottom.png">
+		<img id="ocultar-categorias" class="sub-menu-flecha" src="assets/images/flecha-galerry-top.png">
+	</div>
+	<!--//submenu-->
+
+	<!-- include productos (Es el mismo html que está en productos.html, quizás te sirva reutilizarlo con un include. Lo probé pero no devuelve ninguna categoria)
+	<ng-include src="'templates/productos.html'"></ng-include>-->
+	<!-- //include productos -->
+
+	<!-- Es el mismo html que está en productos.html-->
+	<!--categorias-->
+	<div style="display: none" id="categorias" class="categorias col-xs-12 col-sm-3 col-md-3 ol-lg-3">
+	
+		<!--titulo-->
+		<div class="titulo-cat">
+			<h2 class='text-uppercase'>seleccionar categoría</h2>
+		</div>
+		<!--//titulo-->
+
+		<!--Bloque - categoria-->
+		<div class="bloque-categoria" ng-controller="ProductosCtrl">
+
+			<div class="categoria">
+				<input type="text" value="A" ng-model="search" maxlength="1">
+			</div>
+
+			<!--items-categoria-->
+			<li class="items currentCategoria-1" >
+
+				<!--item-->
+				<div class="item lnk-cat-prod col-xs-12 col-sm-4 col-md-4 ol-lg-4" ng-repeat="(a,b) in categorias | filter: firstletter" ng-click="item(b)">
+					<img ng-src="assets/images/magneti-marelli-item-{{ iterator(a) }}.png">
+					<div class="info-categorias">
+						<p class='text-uppercase'>{{b.nombre}}</p>
+						<!-- <p class='text-uppercase'>cofap</p> -->
+					</div>
+				</div>
+				<!--//item-->
+
+			</li>
+			<!--//items-categoria-->
+
+		</div>
+		<!--//Bloque - categoria-->
+
+
+		<!--flecha-->
+		<div class='flecha'>
+			<img class='lnk-menos-GalCategorias' src="assets/images/flecha-galerry-top.png">
+			<img class='lnk-mas-GalCategorias' src="assets/images/flecha-galerry-bottom.png">
+		</div>
+		<!--//flecha-->
+
+	</div>
+	<!--//categorias-->
+
 	<!-- //include submenu categorias -->
 
 	<!--titulo-->
@@ -34,7 +98,7 @@
 			<div class="titulos-columnas">
 				<li class="columna-productos columna-codigo">
 					<div class="buscar-codigo">
-						<input class="buscar-codigo-input" type="text" name="buscar" placeholder="CODIGO" ng-change="searchbycode">
+						<input class="buscar-codigo-input" type="text" name="buscar" placeholder="CODIGO" >
 						<icon class="buscar-codigo-glyphicon glyphicon glyphicon-search"></icon>
 					</div>
 				</li>
