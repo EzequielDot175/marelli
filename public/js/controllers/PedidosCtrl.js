@@ -33,7 +33,6 @@ app.controller('PedidosCtrl', ['$scope','PedidosService','localStorageService','
 		};
 	}
 	$scope.confirmar = function(){
-		console.log();
 		if ($scope.pedidos.length > 0) {
 			$http.post("ajax",{get:'pedidos',func: 'confirm', list: $scope.pedidos}).success(function(data){
 				console.log(data);

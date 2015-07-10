@@ -149,7 +149,7 @@
 									</div>
 
 									<div class="descripcion-elementos">
-										<p class='text-uppercase producto'>{{b.producto_interno}}</p>
+										<p class='text-uppercase producto'>{{b.producto_descripcion}}</p>
 										<p class='text-uppercase id'>{{b.producto_id}}</p>
 									</div>
 								</div>

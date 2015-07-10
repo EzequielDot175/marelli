@@ -38,7 +38,11 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 			newItem.producto_descripcion = a.producto_descripcion;
 			newItem.producto_id = a.producto_id;
 			newItem.producto_interno = a.producto_interno;
-		cPedidos.add(newItem);
+
+		console.log(newItem.cantidad);
+		if (newItem.cantidad > 0) {
+			cPedidos.add(newItem);
+		};
 		a.cantidad = "";
 		a.valid = false;
 	}
