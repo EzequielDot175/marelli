@@ -3,3 +3,7 @@ bootstrap/
 /app/config/*
 marelli.zip
 .sass-cache
+
+/.htaccess
+
+/public/exports/categoria
