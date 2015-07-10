@@ -179,12 +179,10 @@
 		<script src="resources/jquery/dist/jquery.js"></script>
 		<script src="resources/jquery-ui/jquery-ui.min.js"></script>
 		<script src="assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-		<script src="resources/react/react.js"></script>
-		<script src="resources/ngReact/ngReact.js"></script>
 		<script src="resources/angular-local-storage/dist/angular-local-storage.js"></script>
 		<script src="resources/angular-route/angular-route.js"></script>
-		<script src="js/react-templates/rMain.js"></script>
 		<script src="js/app.js"></script>
+		<script src="js/directives.js"></script>
 		<script src="assets/js/eventos.js"></script>
 	</body>
 </html>

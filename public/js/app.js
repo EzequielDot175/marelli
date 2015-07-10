@@ -1,6 +1,6 @@
 
 
-var app = angular.module('app',['react','ngRoute','LocalStorageModule']);
+var app = angular.module('app',['ngRoute','LocalStorageModule']);
 
 var push = [];
 
@@ -22,11 +22,17 @@ app.directive('categoriaGaleria', [function () {
 
 			bottom.on('click', function(event) {
 				var height = overflow.height();
+
+				var itemHeight = $($('.item')[0]).height();
+				var itemMarginBottom = parseFloat($($('.item')[0]).css("margin-bottom"));
+				var sumHeight = (itemHeight+itemMarginBottom)*6;
+				console.log(sumHeight);
 				globalH = height;
 				current_part++;
-				el.animate({scrollTop: current_part*420 }, 1000);
+
+				el.animate({scrollTop: current_part*sumHeight }, 1000);
 				console.log(current_part);
-				var parts = height / 420;
+				var parts = height / sumHeight;
 				var parts = Math.round(parts - 0.3);
 				console.log(parts);
 				if (parts == current_part) {
@@ -37,11 +43,16 @@ app.directive('categoriaGaleria', [function () {
 
 			top.on('click', function(event) {
 				var height = overflow.height();
+
+				var itemHeight = $($('.item')[0]).height();
+				var itemMarginBottom = parseFloat($($('.item')[0]).css("margin-bottom"));
+				var sumHeight = (itemHeight+itemMarginBottom)*6;
+				console.log(sumHeight);
 				globalH = height;
 				current_part--;
-				el.animate({scrollTop: current_part*420 }, 1000);
+				el.animate({scrollTop: current_part*sumHeight }, 1000);
 				console.log(current_part);
-				var parts = height / 420;
+				var parts = height / sumHeight;
 				var parts = Math.round(parts);
 				console.log(parts);
 				if (0 == current_part) {
@@ -74,6 +85,10 @@ app.config(['$routeProvider', function($routeProvider) {
                 	templateUrl: 'templates/pedido_confirmar.html',
                 	controller: 'PedidosCtrl'
                 })
+                .when('/historial/',{
+                	templateUrl: 'templates/historial.html',
+                	controller: 'HistorialCtrl'
+                })
                 .otherwise({
                 	redirectTo: '/productos'
                 });
@@ -88,27 +103,24 @@ app.service('PedidosService', ['localStorageService',function (storage) {
 	};
 
 	this.equals = function(a,b){
+		
+		// console.log(result);
+		// return result;
+	}
+	this.add = function(item){
 		var result = false;
 		var key = 0;
-		$.each(a, function(index, val) {
-			if (val.producto_id == b.producto_id) {
+		$.each(this.pedidos, function(index, val) {
+			if (val.producto_interno == item.producto_interno) {
 				key = index;
 				result = true;
-			}else{
-				result = false;
 			}
 		});
 		if (result) {
-			var sum = a[key].cantidad + b.cantidad
-			a[key].cantidad = sum;
-		}
-		return result;
-	}
-	this.add = function(item){
-		if (this.equals(this.pedidos,item)) {
-			// console.log('test');
+			var sum = this.pedidos[key].cantidad + item.cantidad
+			this.pedidos[key].cantidad = sum;
 		}else{
-			this.pedidos.push(item);
+			this.pedidos.push(item)
 		}
 		
 	}
@@ -120,6 +132,12 @@ app.service('PedidosService', ['localStorageService',function (storage) {
 
 app.controller('IndexCtrl', ['$scope','$location', function ($scope,$location) {
 	$location.path('/productos');
+}]);
+
+
+
+app.controller('HistorialCtrl', ['$scope', function ($scope) {
+	
 }]);
 
 app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routeParams','localStorageService','PedidosService', function ($scope,$http,$location,$routeParams,storage,cPedidos) {
@@ -177,6 +195,8 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 
 		});
 	}
+	$scope.searchByCode;
+
 
 }]);
 

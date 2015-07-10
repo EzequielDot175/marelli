@@ -19,7 +19,7 @@
 			<img src="assets/images/excel-icon.png">
 		</button>
 		<button type="button" class="btn">
-			DESCARGAR SOLICITUD DE EXCEL
+			CARGAR SOLICITUD DE EXCEL
 			<img src="assets/images/excel-icon.png">
 		</button>
 	</div>
@@ -34,7 +34,7 @@
 			<div class="titulos-columnas">
 				<li class="columna-productos columna-codigo">
 					<div class="buscar-codigo">
-						<input class="buscar-codigo-input" type="text" name="buscar" placeholder="CODIGO">
+						<input class="buscar-codigo-input" type="text" name="buscar" placeholder="CODIGO" ng-change="searchbycode">
 						<icon class="buscar-codigo-glyphicon glyphicon glyphicon-search"></icon>
 					</div>
 				</li>
@@ -63,7 +63,7 @@
 					<span class="text-uppercase"><p>{{item.producto_interno}}</p></span>
 				</li>
 				<li class="columna-productos columna-categoria">
-					<span class="text-uppercase"><p></p></span>
+					<span class="text-uppercase"><p>{{categoryName}}</p></span>
 				</li>
 				<li class="columna-productos columna-descripcion">
 					<span class="text-uppercase"><p>{{item.producto_descripcion}}</p></span>
