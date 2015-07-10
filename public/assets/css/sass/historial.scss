@@ -8,6 +8,12 @@
 	position: relative;
 	width: 100%;
 
+	.busqueda{
+		li,span{
+			background-color: #7B8393 !important;
+		}
+	}
+
 	.items-productos{
 		float: left;
 		background-color: #595959;
@@ -15,53 +21,104 @@
 		margin: 0;
 		padding: 0;
 
-		.columna-codigo{
-			width: 15%;
+		.productos .buscar-codigo {
+			width: 100%;
+			padding-top: 10px;
+			margin: 0;
 			background-color: #5F656D;
 			height: 100%;
 		}
 
-		.busqueda{
-			
+		.fecha{
+			span{
+				border-left: none !important;
+				border-right: none !important;
+			}
 		}
-		.columna-categoria{
-			width: 15%;
-		}
-		.columna-descripcion{
-			width: 15%;
 
-			li{
-				p{
-					text-align: left !important;
+		.item{
+			width:80%;
+			float: right;
+			height: 100%;
+
+			.columna-codigo{
+				width: 15%;
+				//background-color: #5F656D;
+				height: 100%;
+			}
+
+			.codigo{
+				background-color: #5F656D;
+			}
+
+			.columna-descripcion{
+				width: 32%;
+
+				li{
+					p{
+						text-align: left !important;
+					}
+				}
+				
+			}
+
+			.columna-lote{
+				width: 8%;
+			}
+
+			.columna-estado{
+				width: 12%;
+			}
+
+			.columna-accion{
+				width: 9%;
+				span{
+					background-color:#696F76 !important;
 				}
 			}
-			
-		}
-		.columna-lote{
-			width: 15%;
-		}
-		.columna-cantidad{
-			width: 10%;
 
-			input[type=number]::-webkit-inner-spin-button,
-			input[type=number]::-webkit-outer-spin-button {
-				//-webkit-appearance: none;
-				margin: 0; /* Removes leftover margin */
-				opacity: .5;
-				width: 5px;
-			}
 		}
-		.columna-agregar{
-			width: 10%;
+
+		.item-lista{
+			height: auto;
+			position: relative;
+			float: left;
+			display: table;
+			width: 100%;
+			background-color: #848B9A !important;
+			border-bottom: 1px solid #666;
+		}
+
+		.datos-pedido{
+			background-color:#696F76 !important;
+			float: left;
+			display: block;
+			height: 100%;
 		}
 
 		.columna-id{
 			width: 10%;
+			height: 100% !important;
+
+			span{
+				border: none;
+				background-color: #848B9A !important;
+			}
 		}
 
 		.columna-fecha{
 			width: 10%;
+			height: 100% !important;
+
+			span{
+				border: none;
+				background-color: #848B9A !important;
+			}
 		}
+
+		
+
+		
 
 		.titulos-columnas{
 			height: 50px;
@@ -72,7 +129,7 @@
 
 			h4{
 				margin-top: 17px;
-				font-size: 12px;
+				font-size: 11px;
 				text-align: center;
 			}
 		}
@@ -93,18 +150,20 @@
 			}
 
 			span{
-				background-color: #667891;
+				background-color: #939CB0;
 				width: 100%;
 				float: left;
 				font-size: 12px;
-				margin: 1px 0;
 				padding: 0px;
 				color: #fff;
 				height: 60px;
-
+				border-left: .5px solid #666;
+				border-right: 1px solid #666;
+				border-bottom: .5px solid #666;
+				border-top: 1px solid #666;
 			}
 
-			.cantidad{
+			/*.cantidad{
 				width: 60px;
 				border: none;
 				background-color: #536783;
@@ -113,7 +172,7 @@
 				position: relative;
 				left: 50%;
 				margin-left: -30px;
-			}
+			}*/
 
 			.ok{
 				height: 29px;

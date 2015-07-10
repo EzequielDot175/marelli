@@ -9,12 +9,20 @@
 	position: absolute;
 	margin-left: -150px;
 	margin-top: 150px;
-	background-color: #999;
+	background-color: #F4C609;
 	padding: 20px;
 	font-family: Gotham-Book;
+	font-size: 12px;
+	text-align: center;
+	border-radius: 5px;
 
 	button{
 		font-family: Gotham-Book;
+		margin: 0 auto;
+		display: block;
+		width: 100%;
+		margin-top: 10px;
+		float: left;
 	}
 		
 
@@ -25,11 +33,32 @@
 
 	img{
 		width: 100px;
-		position: relative;
-		left: 50%;
-		margin-left: -50px;
 	}
-		
+
+}
+
+.error-login{
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #961302;
+	background-color: #961302;
+	width: 300px;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	margin-left: -150px;
+	margin-top: 115px;
+	font-family: Gotham-Book;
+	font-size: 12px;
+	text-align: center;
+	border-radius: 5px;
+
+	p{
+		color:#d1d1d1;
+		font-size: 12px;
+	}
 
 }
 

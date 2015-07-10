@@ -66,11 +66,7 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 		  error(function(error, status, headers, config) {
 		  	console.log(error);
 		  });
-	console.log(cPedidos);
 	$scope.add = function(a){
-
-
-
 		var newItem = {};
 			newItem.cantidad = a.cantidad;
 			newItem.catName = $scope.categoryName;
@@ -79,10 +75,18 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 			newItem.producto_descripcion = a.producto_descripcion;
 			newItem.producto_id = a.producto_id;
 			newItem.producto_interno = a.producto_interno;
-
 		cPedidos.add(newItem);
+	}
+	$scope.export = function(){
+		// console.log('func');
+		$http.post("ajax",{get: "productos", func: "excelByCategory",catName: $scope.categoryName,id: $routeParams.id}).success(function(a){
+			// window.location.href = a;
+			console.log(a);
+			// console.log(a);
+			// console.log(a);
+		}).error(function(a){
 
-		// console.log();
+		});
 	}
 
 }]);
@@ -107,7 +111,7 @@ app.controller('ProductosCtrl', ['$scope','$http','localStorageService','$locati
 
 	$scope.item = function(a){
 		$location.path('/productos/categoria/'+a.id_marelli);
-		$scope.$apply();
+		// $scope.$apply();
 	}
 	// console.log($scope.categorias);
 	

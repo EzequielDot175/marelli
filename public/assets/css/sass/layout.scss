@@ -9,8 +9,31 @@
 	margin: 0 10%;
 }
 
+#mover-sidebar{
+	float: right;
+	margin-top: 50px;
+	color: #fff;
+}
+
+.sidebar-left{
+	right:0;
+}
+
+.contenido-left{
+	float: left !important;
+}
+
+.sidebar-right{
+	left: 0;
+}
+
+.contenido-right{
+	float: right !important;
+}
+
 .titulo{
-	margin-bottom: 50px;
+	margin: 10px 0 40px 0px;
+	float:left;
 
 	h1{
 		font-size: 30px;
@@ -20,7 +43,7 @@
 	h3{
 		font-size: 11px;
 		color: #fff;
-		margin: 5px;
+		margin: 12px 5px;
 	}
 }
 
@@ -35,19 +58,41 @@
 		right: 10px;
 		top: 7px;
 	}
-	
-	input {
-		width: 40%;
-		background-color: #444444;
-		border: none;
-		padding: 5px;
-		margin: 0;
-		border-radius: 2px;
-		color: #fff;
-		height: 30px;
-		float: right;
+
+	.input{
+
+		input {
+			color:#fff;
+			padding: 5px;
+			margin: 0;
+			border-radius: 2px;
+			color: #fff;
+			height: 30px;
+			width: 40%;
+			background-color: #444444;
+			border: none;
+			float: right;
 		}
+	}
+
+	.resultado{
+		width: 40%;
+		float: right;
+		position: relative;
+		background-color: #444444;
+		position: absolute;
+		right: 0;
+		top: 32px;
+		padding: 10px;
+
+		p { 
+			color:#fff;
+			padding: 2px 0;
+		}
+	}
 }
+
+
 
 .menu{
 	background-color: #F2C300;
@@ -66,15 +111,23 @@
 	}
 
 	.nav>li>a {
-		padding: 10px 0px 10px 40px;
 		font-family: Gotham-Medium;
+	}
+
+	li:hover {
+		background-color: #DDB300;
+	}
+	.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+		background-color: transparent;
+		border-color: none;
 	}
 	.nav{
 		float: right;
-		margin-top: 20px;
 		color: #fff;
 
 		li{
+			height: 100px;
+			padding-top: 22px;
 			a{
 				color: #fff;
 			}
@@ -187,14 +240,14 @@
 
 			.titulo-agregados{
 				color:#fff;
-				margin: 10px 0;
+				margin: 10px 0 5px 0;
 				float: left;
 
 				.carrito-sidebar-text{
 					float: left;
 					color:#fff;
 					font-size: 12px;
-					padding-top: 10px;
+					padding-top: 13px;
 					padding-left: 10px;
 				}
 
@@ -293,6 +346,10 @@
 		height: 65px;
 		background-color: #717882;
 
+		#ocultar-categorias{
+			display: none;
+		}
+
 		.sub-menu-text{
 			color: #fff;
 			font-size: 12px;
@@ -325,6 +382,8 @@
 	}
 
 }
+
+
 
 
 // ==========================================================================

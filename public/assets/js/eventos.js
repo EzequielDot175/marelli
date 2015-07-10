@@ -1,34 +1,43 @@
+(function($){
+
+	$.fn.galeria = function(){
+
+		//hover cerrar carrito
+		$(".cerrar-item").hover(function(){
+	        $(this).addClass('cerrar-hover', 500);
+	        }, function(){
+	        $(this).removeClass('cerrar-hover', 500);
+	    });
+
+		//hover categorias
+		$(".lnk-cat-prod").hover(function(){
+	        $(this).addClass('activo', 200);
+	        }, function(){
+	        $(this).removeClass('activo', 200);
+	    });
+	}
+
+})(jQuery);
+
 $(document).ready(function(){
 
 	//mostrar categoria
 	$(document).on("click", "#mostrar-categorias", function(){
+		$(this).css('display','none');
+		$('#ocultar-categorias').css('display','block');
 		$('#categorias').fadeIn();
-		$('.sub-menu').css('display','none');
     });
 
 
     //ocultar categoria
 	$(document).on("click", "#ocultar-categorias", function(){
-		$('.sub-menu').fadeIn();
+		$(this).css('display','none');
+		$('#mostrar-categorias').css('display','block');
 		$('#categorias').css('display','none');
     });
-
-
-	//hover cerrar carrito
-    $(".cerrar-item").hover(function(){
-        $(this).addClass('cerrar-hover', 500);
-        }, function(){
-        $(this).removeClass('cerrar-hover', 500);
-    });
-
-
-	//hover categorias
-	$(".lnk-cat-prod").hover(function(){
-        $(this).addClass('activo', 200);
-        }, function(){
-        $(this).removeClass('activo', 200);
-    });
-
+	
+	/*$("contenedor").galeria();
+   	$.fn.galeria();*/
 
     //botón ok listado productos (agrega al carrito)
     /*$( ".cantidad" ).change(function() {
@@ -42,9 +51,9 @@ $(document).ready(function(){
 		}
 	});*/
 
-
 	//galeriaCategorias
 	currentGalCategorias = 1 ;
+
 	GaleriaCategorias(currentGalCategorias);
 	$(document).on("click", ".lnk-mas-GalCategorias", function(){
 		currentGalCategorias = currentGalCategorias + 1;
@@ -53,6 +62,24 @@ $(document).ready(function(){
     $(document).on("click", ".lnk-menos-GalCategorias", function(){
 		currentGalCategorias = currentGalCategorias - 1;
         GaleriaCategorias(currentGalCategorias);
+    });
+
+    //mover sidebar
+	$(document).on("click", "#mover-sidebar", function(){
+		posicion = $(this).attr('posicion');
+		if(posicion == 'left'){
+			$('.sidebar').addClass('sidebar-left');
+			$('.contenido').addClass('contenido-left');
+			$('.sidebar').removeClass('sidebar-right');
+			$('.contenido').removeClass('contenido-right');
+			$(this).attr('posicion','right');
+		}else{
+			$('.sidebar').addClass('sidebar-right');
+			$('.contenido').addClass('contenido-right');
+			$('.sidebar').removeClass('sidebar-left');
+			$('.contenido').removeClass('contenido-left');
+			$(this).attr('posicion','left');
+		}
     });
     
 });

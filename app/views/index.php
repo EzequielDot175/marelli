@@ -85,15 +85,23 @@
 		<div class="contenedor col-xs-12 col-sm-12 col-md-12 ol-lg-12">
 
 			<div class="buscar">
-				<input type="text" name="buscar">
-				<span class="glyphicon glyphicon-search"></span>
+				<div class="input"> 
+					<input type="text" name="buscar">
+					<span class="glyphicon glyphicon-search"></span>
+				</div>
+				<div class="resultado" style="display:none">
+					<p>Resultado 1</p>
+					<p>Resultado 2</p>
+					<p>Resultado 3</p>
+				</div>
 			</div>
 
 			<div class="titulo">
 				<h1 class="text-uppercase">Pedidos</h1>
 				<h3 class="text-uppercase">SELECCIONE O CARGUE ARTÍCULOS PARA AGREGAR AL PEDIDO</h3>
 			</div>
-
+			<p id="mover-sidebar" posicion="left">mover sidebar</p>
+			
 			<div class="bloque-general">
 
 				<!--CONTENIDO************-->
@@ -109,9 +117,9 @@
 					<div class="perfil">
 						<div class="imagen-perfil background-cover" style="background-image: url('assets/images/imagen-perfil.jpg')">
 						</div>
-						<p class='text-uppercase nombre-perfil'>ROBERTO ARIEL RASER</p>
+						<p class='text-uppercase nombre-perfil'><?php echo Auth::user()->name; ?></p>
 						<p>Gerente general</p>
-						<p>rraser@agricolarodrigez.com.ar</p>
+						<p><?php echo Auth::user()->email; ?></p>
 						<button type="button" class="btn boton-perfil">MODIFICAR CLAVE</button>
 					</div>
 
@@ -169,7 +177,7 @@
 		<!-- Librería jQuery requerida por los plugins de JavaScript Bootstrap -->
 		<script src="resources/angular/angular.min.js"></script>
 		<script src="resources/jquery/dist/jquery.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="resources/jquery-ui/jquery-ui.min.js"></script>
 		<script src="assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
 		<script src="resources/react/react.js"></script>
 		<script src="resources/ngReact/ngReact.js"></script>
