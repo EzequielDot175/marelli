@@ -16,14 +16,14 @@ Route::get("/logout", function(){
 
 Route::get('/', function()
 {
-	if (Auth::check()) {
+	if (User::Auth()) {
 		return View::make('index');
 	}else{
 		return View::make("login");
 	}
 });
 Route::post("/ajax",function(){
-	if (Auth::check()) {
+	if (User::Auth()) {
 		switch (Input::get('get')):
 				case 'categorias':
 						Categoria::Ajax(Input::get('func'));

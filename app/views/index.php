@@ -117,9 +117,9 @@
 					<div class="perfil">
 						<div class="imagen-perfil background-cover" style="background-image: url('assets/images/imagen-perfil.jpg')">
 						</div>
-						<p class='text-uppercase nombre-perfil'><?php echo Auth::user()->name; ?></p>
+						<p class='text-uppercase nombre-perfil'><?php  echo User::AboutMe()->name; ?></p>
 						<p>Gerente general</p>
-						<p><?php echo Auth::user()->email; ?></p>
+						<p><?php  echo User::AboutMe()->email; ?></p>
 						<button type="button" class="btn boton-perfil">MODIFICAR CLAVE</button>
 					</div>
 

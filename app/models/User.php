@@ -23,4 +23,24 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+
+	public static function Auth(){
+		session_start();
+		if (isset($_SESSION["Auth"])) {
+			return $_SESSION["Auth"]["logged"];
+		}else{
+			return false;
+		}
+	}
+
+	public static function AboutMe(){
+		if (isset($_SESSION["Auth"])) {
+			// return $_SESSION["Auth"]["logged"];
+			$id = (int)$_SESSION["Auth"]["user"]["id"];
+			return User::find($id);
+		}else{
+			return false;
+		}
+	}
+
 }
