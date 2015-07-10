@@ -34,7 +34,10 @@ Route::post("/ajax",function(){
 				case 'pedidos':
 						Pedido::Ajax(Input::get('func'));
 					break;
-				
+				case 'historial':
+						Historial::Ajax(Input::get('func'));
+					break;
+
 				default:
 					# code...
 					break;

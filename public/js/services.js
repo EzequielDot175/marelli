@@ -32,3 +32,12 @@ app.service('PedidosService', ['localStorageService',function (storage) {
 		
 	}
 }]);
+
+app.service('Helpers', [function () {
+	var functions = {};
+
+		functions.upload = function($){
+
+		}
+
+}])

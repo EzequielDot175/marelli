@@ -23,6 +23,10 @@ app.config(['$routeProvider', function($routeProvider) {
                 	templateUrl: 'templates/historial.html',
                 	controller: 'HistorialCtrl'
                 })
+                .when('/historial/:id',{
+                        templateUrl: 'templates/historial_detalle.html',
+                        controller: 'HistorialCtrl'
+                })
                 .otherwise({
                 	redirectTo: '/productos'
                 });

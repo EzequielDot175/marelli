@@ -24,6 +24,7 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 			item.valid = true;
 		}else{
 			item.valid = false;
+			item.cantidad = 0;
 		}
 
 	}
@@ -57,6 +58,9 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 
 		});
 	}
+	$scope.notNegative = function(){
+
+	};
 
 
 }]);

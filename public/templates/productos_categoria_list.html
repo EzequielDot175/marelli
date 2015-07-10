@@ -62,8 +62,8 @@
 
 		<!--flecha-->
 		<div class='flecha'>
-			<img class='lnk-menos-GalCategorias' src="assets/images/flecha-galerry-top.png">
-			<img class='lnk-mas-GalCategorias' src="assets/images/flecha-galerry-bottom.png">
+			<img src="assets/images/flecha-galerry-top.png" id="gal-top">
+			<img src="assets/images/flecha-galerry-bottom.png" id="gal-bottom">
 		</div>
 		<!--//flecha-->
 
@@ -84,7 +84,7 @@
 			DESCARGAR LISTADO EN EXCEL
 			<img src="assets/images/excel-icon.png">
 		</button>
-		<button type="button" class="btn" loadExcel="">
+		<button type="button" class="btn" id="loadExcel" load-excel >
 			CARGAR SOLICITUD DE EXCEL
 			<img src="assets/images/excel-icon.png">
 		</button>
@@ -158,4 +158,4 @@
 
 </div>
 <!--//listado-productos-->
-<input type="file" style="display:none" loadExcel="" >
+<input type="file" style="display:none" id="loadExcelInput" load-excel-input="" >

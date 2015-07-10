@@ -59,3 +59,47 @@ app.directive('categoriaGaleria', [function () {
 		}
 	};
 }]);
+
+
+app.directive('loadExcel', [function () {
+	return {
+		restrict: 'A',
+		link: function (scope, el, iAttrs) {
+			$(el).click(function(event) {
+				$('input[load-excel-input]').trigger('click');
+			});
+		}
+	};
+}]);
+
+
+app.directive('loadExcelInput', [function () {
+	return {
+		restrict: 'A',
+		link: function (scope, el, iAttrs) {
+			// console.log(el);
+			$(el).change(function(event) {
+				event.preventDefault();
+				var file = $(this)[0].files[0];
+				var data = new FormData();
+				data.append('file',file);
+				$.ajax({
+					url: '/path/to/file',
+					type: 'default GET (Other values: POST)',
+					dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+					processData: false,
+					data: data,
+					before: function(){
+
+					},
+					success: function(){
+
+					}
+
+				});
+				
+				
+			});
+		}
+	};
+}])

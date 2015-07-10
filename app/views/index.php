@@ -56,7 +56,7 @@
 							</a>
 						</li>
 						<li class="naranja text-uppercase">
-							<a href="#/">
+							<a href="#/historial">
 								historial
 							</a>
 						</li>
