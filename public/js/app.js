@@ -2,6 +2,57 @@ var app = angular.module('app',['react','ngRoute','LocalStorageModule']);
 
 var push = [];
 
+
+app.directive('categoriaGaleria', [function () {
+	return {
+		restrict: 'A',
+		link: function (scope, element, iAttrs) {
+			var el = $(element);
+			var top = $('#gal-top');
+			var bottom = $('#gal-bottom');
+			var overflow = el.find('.overflow');
+
+			var globalH;
+			var current_part = 0;
+
+			top.hide();
+
+			bottom.on('click', function(event) {
+				var height = overflow.height();
+				globalH = height;
+				current_part++;
+				el.animate({scrollTop: current_part*420 }, 1000);
+				console.log(current_part);
+				var parts = height / 420;
+				var parts = Math.round(parts - 0.3);
+				console.log(parts);
+				if (parts == current_part) {
+					top.show();
+					bottom.hide();
+				}
+			});
+
+			top.on('click', function(event) {
+				var height = overflow.height();
+				globalH = height;
+				current_part--;
+				el.animate({scrollTop: current_part*420 }, 1000);
+				console.log(current_part);
+				var parts = height / 420;
+				var parts = Math.round(parts);
+				console.log(parts);
+				if (0 == current_part) {
+					top.hide();
+					bottom.show();
+				}
+			});
+
+			
+			// $(element)
+		}
+	};
+}]);
+
 app.config(['$routeProvider', function($routeProvider) {
         $routeProvider
         		.when('/', {
@@ -33,8 +84,30 @@ app.service('PedidosService', ['localStorageService',function (storage) {
 		this.pedidos = storage.get('pedido');
 	};
 
+	this.equals = function(a,b){
+		var result = false;
+		var key = 0;
+		$.each(a, function(index, val) {
+			if (val.producto_id == b.producto_id) {
+				key = index;
+				result = true;
+			}else{
+				result = false;
+			}
+		});
+		if (result) {
+			var sum = a[key].cantidad + b.cantidad
+			a[key].cantidad = sum;
+		}
+		return result;
+	}
 	this.add = function(item){
-		this.pedidos.push(item);
+		if (this.equals(this.pedidos,item)) {
+			// console.log('test');
+		}else{
+			this.pedidos.push(item);
+		}
+		
 	}
 	this.get = function(){
 		return this.pedidos;
@@ -66,7 +139,18 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 		  error(function(error, status, headers, config) {
 		  	console.log(error);
 		  });
+
+	$scope.valid = function(item){
+		if (parseInt(item.cantidad) > 0) {
+			item.valid = true;
+		}else{
+			item.valid = false;
+		}
+
+	}
+
 	$scope.add = function(a){
+
 		var newItem = {};
 			newItem.cantidad = a.cantidad;
 			newItem.catName = $scope.categoryName;
@@ -76,12 +160,14 @@ app.controller('ProductosCategoriaCtrl', ['$scope','$http','$location','$routePa
 			newItem.producto_id = a.producto_id;
 			newItem.producto_interno = a.producto_interno;
 		cPedidos.add(newItem);
+		a.cantidad = "";
+		a.valid = false;
 	}
 	$scope.export = function(){
 		// console.log('func');
 		$http.post("ajax",{get: "productos", func: "excelByCategory",catName: $scope.categoryName,id: $routeParams.id}).success(function(a){
-			// window.location.href = a;
-			console.log(a);
+			window.location.href = a;
+			// console.log(a);
 			// console.log(a);
 			// console.log(a);
 		}).error(function(a){
@@ -108,12 +194,19 @@ app.controller('ProductosCtrl', ['$scope','$http','localStorageService','$locati
 		  });
 	}
 
-
+	$scope.iterator = function(a){
+		if (a % 2 == 0) {
+			return 1;
+		}else{
+			return 2;
+		}
+	};
 	$scope.item = function(a){
 		$location.path('/productos/categoria/'+a.id_marelli);
 		// $scope.$apply();
 	}
 	// console.log($scope.categorias);
+
 	
 }]);
 

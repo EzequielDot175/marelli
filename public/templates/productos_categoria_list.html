@@ -73,12 +73,12 @@
 				</li>
 				<li class="columna-productos columna-cantidad">
 					<span class="input-cantidad">
-						<input id="ok-1" class="cantidad" type="number"  ng-model="item.cantidad">
+						<input id="ok-1" class="cantidad" type="number"  ng-model="item.cantidad" ng-change="valid(item);">
 					</span>
 				</li>
 				<li class="columna-productos columna-agregar">
 					<span class="text-uppercase">
-						<div class="ok-1 ok ok-activo" style="cursor:pointer;" ng-click="add(item);"></div>
+						<div class="ok-1 ok " ng-model="item.valid" ng-class="{'ok-activo': item.valid, 'ok-inactivo': !item.valid}" style="cursor:pointer;" ng-click="add(item);"></div>
 					</span>
 				</li>
 			</ul>

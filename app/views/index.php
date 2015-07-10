@@ -42,7 +42,7 @@
 				<!--// boton menu mobile -->
 
 				<div class="logo">
-					<a href="index.php">
+					<a href="#/">
 						<img src="assets/images/magneti-marelli-logo.png">
 					</a>
 				</div>
@@ -51,12 +51,12 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="text-uppercase">
-							<a href="listado-productos.php">
+							<a href="#">
 								pedidos
 							</a>
 						</li>
 						<li class="naranja text-uppercase">
-							<a href="historial.php">
+							<a href="#">
 								historial
 							</a>
 						</li>
@@ -66,7 +66,7 @@
 							</a>
 						</li>
 						<li class="rosa text-uppercase">
-							<a href="login.php">
+							<a href="#">
 								usuario
 							</a>
 						</li>

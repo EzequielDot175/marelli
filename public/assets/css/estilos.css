@@ -813,6 +813,12 @@ ul, li {
         -moz-box-shadow: inset 0px -5px 0px 0px #f2c300;
         box-shadow: inset 0px -5px 0px 0px #f2c300; }
 
+.categoria-gal {
+  height: 419px;
+  overflow: hidden; }
+  .categoria-gal .overflow {
+    float: left; }
+
 /* RESPONSIVE  */
 /*mobile--------------------------------------------------*/
 @media screen and (min-width: 0px) and (max-width: 767px) {

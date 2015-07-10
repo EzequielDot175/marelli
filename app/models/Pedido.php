@@ -11,7 +11,8 @@ class Pedido extends Eloquent {
 					$pedido = Input::get('list');
 					$x = new Pedido();
 					$x->id = self::random();
-					$x->user_id = 4;
+					$x->user_id = User::AboutMe()->id;
+					$x->user_data = User::AboutMe()->toJson();
 					$x->pedido_data = self::ArrayToJSON($pedido);
 					if($x->save()):
 						echo("true");

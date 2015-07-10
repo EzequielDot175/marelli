@@ -15,33 +15,25 @@
 		</div>
 
 		<!--items-categoria-->
-		<li class="items currentCategoria-1">
+		<li class="items categoria-gal" categoria-galeria="func" ng-cloak>
 
-			<!--item-->
-			<div class="item lnk-cat-prod col-xs-12 col-sm-4 col-md-4 ol-lg-4" ng-repeat="categoria in categorias" ng-click="item(categoria)">
-				<img src="assets/images/magneti-marelli-item-1.png">
-				<div class="info-categorias">
-					<p class='text-uppercase'>{{categoria.nombre}}</p>
-					<!-- <p class='text-uppercase'>cofap</p> -->
+			<div class="overflow">
+				<!--item-->
+				<div class="item lnk-cat-prod col-xs-12 col-sm-4 col-md-4 ol-lg-4" ng-repeat="(a,b) in categorias" ng-click="item(b)">
+					<img ng-src="assets/images/magneti-marelli-item-{{ iterator(a) }}.png" >
+					<div class="info-categorias">
+						<p class='text-uppercase'>{{b.nombre}}</p>
+						<!-- <p class='text-uppercase'>cofap</p> -->
+					</div>
 				</div>
+				<!--//item-->
 			</div>
-			<!--//item-->
 
 		</li>
 		<!--//items-categoria-->
 
 		<!--items-categoria-->
-		<li class="items currentCategoria-2">
-			
-
-		</li>
-		<!--//items-categoria-->
-
-		<!--items-categoria-->
-		<li class="items currentCategoria-3">
 		
-
-		</li>
 		<!--//items-categoria-->
 	</div>
 	<!--//Bloque - categoria-->
@@ -50,8 +42,8 @@
 
 	<!--flecha-->
 	<div class='flecha'>
-		<img class='lnk-menos-GalCategorias' src="assets/images/flecha-galerry-top.png">
-		<img class='lnk-mas-GalCategorias' src="assets/images/flecha-galerry-bottom.png">
+		<img src="assets/images/flecha-galerry-top.png" id="gal-top">
+		<img src="assets/images/flecha-galerry-bottom.png" id="gal-bottom">
 	</div>
 	<!--//flecha-->
 
