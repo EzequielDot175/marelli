@@ -4,8 +4,8 @@
 	class Auth
 	{
 		private $db;
-		private $dbuser = "devmarel_marelli";
-		private $dbname = "devmarel_marelli";
+		private $dbuser = "dev_marelli";
+		private $dbname = "dev_marelli";
 		private $dbpass = "#Tv1#Poni-vD";
 		const HASH = '2a07somestringDONTTOUCHTHIS';
 
