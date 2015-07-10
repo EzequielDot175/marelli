@@ -51,22 +51,22 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="text-uppercase">
-							<a href="#">
+							<a href="#/">
 								pedidos
 							</a>
 						</li>
 						<li class="naranja text-uppercase">
-							<a href="#">
+							<a href="#/">
 								historial
 							</a>
 						</li>
 						<li class="marron text-uppercase dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<a href="#/" class="dropdown-toggle" data-toggle="dropdown">
 								garantias
 							</a>
 						</li>
 						<li class="rosa text-uppercase">
-							<a href="#">
+							<a href="#/">
 								usuario
 							</a>
 						</li>

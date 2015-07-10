@@ -1,6 +1,9 @@
+
+
 var app = angular.module('app',['react','ngRoute','LocalStorageModule']);
 
 var push = [];
+
 
 
 app.directive('categoriaGaleria', [function () {
@@ -205,7 +208,14 @@ app.controller('ProductosCtrl', ['$scope','$http','localStorageService','$locati
 		$location.path('/productos/categoria/'+a.id_marelli);
 		// $scope.$apply();
 	}
-	// console.log($scope.categorias);
+
+	$scope.firstletter = function(obj){
+		if ($scope.search != undefined && $scope.search != "") {
+			return obj.nombre[0] == $scope.search.toUpperCase();
+		}else{
+			return obj;
+		}
+	}
 
 	
 }]);

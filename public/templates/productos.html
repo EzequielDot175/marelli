@@ -11,7 +11,7 @@
 	<div class="bloque-categoria">
 
 		<div class="categoria">
-			<input type="text" value="A">
+			<input type="text" value="A" ng-model="search" maxlength="1">
 		</div>
 
 		<!--items-categoria-->
@@ -19,7 +19,7 @@
 
 			<div class="overflow">
 				<!--item-->
-				<div class="item lnk-cat-prod col-xs-12 col-sm-4 col-md-4 ol-lg-4" ng-repeat="(a,b) in categorias" ng-click="item(b)">
+				<div class="item lnk-cat-prod col-xs-12 col-sm-4 col-md-4 ol-lg-4" ng-repeat="(a,b) in categorias | filter: firstletter" ng-click="item(b)">
 					<img ng-src="assets/images/magneti-marelli-item-{{ iterator(a) }}.png" >
 					<div class="info-categorias">
 						<p class='text-uppercase'>{{b.nombre}}</p>
