@@ -161,7 +161,7 @@
 						
 
 						<a href="#/confirmar">	
-							<button type="button" class="btn boton-continuar">CONTINUAR</button>
+							<button type="button" class="btn boton-continuar" ng-show="ifpedidos()">CONTINUAR</button>
 						</a>
 
 					</div>
@@ -183,6 +183,12 @@
 		<script src="resources/angular-route/angular-route.js"></script>
 		<script src="js/app.js"></script>
 		<script src="js/directives.js"></script>
+		<script src="js/services.js"></script>
+		<script src="js/controllers/historialCtrl.js"></script>
+		<script src="js/controllers/indexCtrl.js"></script>
+		<script src="js/controllers/PedidosCtrl.js"></script>
+		<script src="js/controllers/ProductosCategoriaCtrl.js"></script>
+		<script src="js/controllers/ProductosCtrl.js"></script>
 		<script src="assets/js/eventos.js"></script>
 	</body>
 </html>

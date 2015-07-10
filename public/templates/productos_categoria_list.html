@@ -39,19 +39,21 @@
 			</div>
 
 			<!--items-categoria-->
-			<li class="items currentCategoria-1" >
+			<li class="items categoria-gal" categoria-galeria="func" ng-cloak>
 
+			<div class="overflow">
 				<!--item-->
 				<div class="item lnk-cat-prod col-xs-12 col-sm-4 col-md-4 ol-lg-4" ng-repeat="(a,b) in categorias | filter: firstletter" ng-click="item(b)">
-					<img ng-src="assets/images/magneti-marelli-item-{{ iterator(a) }}.png">
+					<img ng-src="assets/images/magneti-marelli-item-{{ iterator(a) }}.png" >
 					<div class="info-categorias">
 						<p class='text-uppercase'>{{b.nombre}}</p>
 						<!-- <p class='text-uppercase'>cofap</p> -->
 					</div>
 				</div>
 				<!--//item-->
+			</div>
 
-			</li>
+		</li>
 			<!--//items-categoria-->
 
 		</div>
@@ -82,7 +84,7 @@
 			DESCARGAR LISTADO EN EXCEL
 			<img src="assets/images/excel-icon.png">
 		</button>
-		<button type="button" class="btn">
+		<button type="button" class="btn" loadExcel="">
 			CARGAR SOLICITUD DE EXCEL
 			<img src="assets/images/excel-icon.png">
 		</button>
@@ -156,3 +158,4 @@
 
 </div>
 <!--//listado-productos-->
+<input type="file" style="display:none" loadExcel="" >
