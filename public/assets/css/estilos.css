@@ -507,8 +507,6 @@ ul, li {
     width: 100px;
     float: left;
     margin-top: 15px; }
-  .menu .navbar-collapse.collapse {
-    padding-right: 0; }
   .menu .nav > li > a {
     font-family: Gotham-Medium; }
   .menu li:hover {
@@ -701,6 +699,83 @@ ul, li {
 
 /* RESPONSIVE  */
 /*mobile--------------------------------------------------*/
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .bloque-general .sidebar {
+    width: 100%; }
+
+  .bloque-general .contenido {
+    width: 100%; }
+
+  .menu .logo {
+    position: absolute;
+    top: 10px; }
+
+  .bloque-general .sidebar {
+    position: relative; }
+
+  .bloque-general .sidebar .perfil {
+    text-align: center; }
+
+  .navbar-collapse.collapse {
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    position: relative; }
+
+  .navbar-collapse {
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    position: relative; }
+
+  .menu .nav {
+    background-color: #F2C300;
+    width: 100%;
+    z-index: 5;
+    margin: 0;
+    padding: 0;
+    text-align: right; }
+
+  .navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    color: #000;
+    background-color: #000; }
+
+  .navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 10px 0px;
+    margin: 10px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px; }
+
+  .menu {
+    height: 60px; }
+
+  .menu .contenedor {
+    width: 100%;
+    margin: 0; }
+
+  .menu .logo {
+    position: absolute;
+    top: 0px;
+    margin-top: 7px;
+    width: 80px;
+    left: 10px; }
+
+  .menu .logo img {
+    width: 100%; }
+
+  .menu .nav li {
+    height: auto;
+    padding: 0px;
+    width: auto;
+    margin: 0; } }
 /*tablet----------------------------------------*/
 @media screen and (min-width: 768px) and (max-width: 1280px) {
   .contenedor {
@@ -714,12 +789,11 @@ ul, li {
   .bloque-general .contenido {
     width: 100%; }
 
-  .menu .logo {
-    position: absolute;
-    top: 10px; }
-
   .bloque-general .sidebar {
-    position: relative; } }
+    position: relative; }
+
+  .bloque-general .sidebar .perfil {
+    text-align: center; } }
 /*notbook------------------------------------*/
 /*desktop------------------------------*/
 /*desktop large-----------------------------------------------*/
